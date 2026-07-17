@@ -66,4 +66,7 @@ public class Actividad {
     /** Identificador del hijo al que se le asigna la actividad. */
     @Column(name="id_hijo", nullable = false, unique = false)
     private Long idHijo;
+
+    @Column (name="terminada", nullable = false, unique = false, length = 50)
+    private boolean terminada;
 }

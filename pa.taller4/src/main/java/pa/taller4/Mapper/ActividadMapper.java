@@ -31,7 +31,8 @@ public class ActividadMapper {
             actividad.getFechaInicio(),
             actividad.getFechaTerminacion(),
             actividad.getIdTutor(),
-            actividad.getIdHijo()
+            actividad.getIdHijo(),
+            actividad.isTerminada()
         );
     }
 }

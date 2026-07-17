@@ -1,4 +1,4 @@
-const MESES = [
+    const MESES = [
     "Enero","Febrero","Marzo","Abril","Mayo","Junio",
     "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"
 ];
@@ -50,7 +50,8 @@ function generarCalendario(anio, mes) {
 
         actividadesDelDia.forEach(actividad => {
             const chip = document.createElement("button");
-            chip.classList.add("actividad-btn");
+               sessionStorage.setItem("idActividad", actividad.id);
+             chip.classList.add("actividad-btn");
             chip.textContent = actividad.titulo;
 
             chip.addEventListener("click", function() {

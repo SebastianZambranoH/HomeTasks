@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -84,6 +85,11 @@ public class ActividadController {
     @PutMapping("/{id}")
     public ResponseEntity<ActividadResponse> modificar(@PathVariable Long id, @RequestBody Actividad actividad) {
         return ResponseEntity.ok(actividadService.modificarActividad(id, actividad));
+    }
+
+    @PatchMapping("/{id}/terminar")
+    public ResponseEntity<ActividadResponse> marcarComoTerminada(@PathVariable Long id) {
+        return ResponseEntity.ok(actividadService.marcarComoTerminada(id));
     }
 
     /**

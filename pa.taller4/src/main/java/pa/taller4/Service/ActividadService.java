@@ -3,6 +3,7 @@ package pa.taller4.Service;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import pa.taller4.Mapper.ActividadMapper;
 import pa.taller4.Modelo.Actividad;
 import pa.taller4.Modelo.ActividadResponse;
@@ -25,6 +26,9 @@ public class ActividadService {
 
     /** Mapper para convertir entre la entidad Actividad y el DTO ActividadResponse. */
     private final ActividadMapper actividadMapper;
+    
+    /** Encoder para hashear la contraseña y poderla guardar en la base de datos. */
+    private final BCryptPasswordEncoder encoder;
 
     /**
      * Constructor que inyecta el repositorio y el mapper de actividades.
@@ -35,6 +39,8 @@ public class ActividadService {
     public ActividadService(ActividadRepository actividadRepository, ActividadMapper actividadMapper) {
         this.actividadRepository = actividadRepository;
         this.actividadMapper = actividadMapper;
+        this.encoder = new BCryptPasswordEncoder();
+        
     }
 
     /**
@@ -123,6 +129,14 @@ public class ActividadService {
         if (nueva.getIdHijo() != null) {
             original.setIdHijo(nueva.getIdHijo());
         }
+    }
+
+    public ActividadResponse marcarComoTerminada(Long id) {
+        Actividad actividad = actividadRepository.findById(id)
+                .orElseThrow(() -> new ActividadNotFoundException(id));
+        actividad.setTerminada(true);
+        Actividad saved = actividadRepository.save(actividad);
+        return actividadMapper.toResponse(saved);
     }
 
     /**
