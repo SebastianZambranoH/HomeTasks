@@ -27,8 +27,6 @@ public class ActividadService {
     /** Mapper para convertir entre la entidad Actividad y el DTO ActividadResponse. */
     private final ActividadMapper actividadMapper;
     
-    /** Encoder para hashear la contraseña y poderla guardar en la base de datos. */
-    private final BCryptPasswordEncoder encoder;
 
     /**
      * Constructor que inyecta el repositorio y el mapper de actividades.
@@ -39,7 +37,6 @@ public class ActividadService {
     public ActividadService(ActividadRepository actividadRepository, ActividadMapper actividadMapper) {
         this.actividadRepository = actividadRepository;
         this.actividadMapper = actividadMapper;
-        this.encoder = new BCryptPasswordEncoder();
         
     }
 
