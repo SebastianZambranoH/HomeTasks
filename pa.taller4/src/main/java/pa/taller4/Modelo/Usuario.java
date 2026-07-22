@@ -35,6 +35,12 @@ public class Usuario {
     @Column(name = "usuario", nullable = false, unique = false, length = 50)
     private String user;
     
+    @Column(name = "tipo_documento", nullable = false, unique = false, length = 50)
+    private String tipo_documento;
+
+    @Column(name = "documento", nullable = false, unique = false, length = 50)
+    private Long documento;
+    
     @Column(name = "correo", nullable = false, unique = false, length = 50)
     private String correo;
     

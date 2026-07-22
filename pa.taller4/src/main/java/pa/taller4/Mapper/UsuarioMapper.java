@@ -21,6 +21,8 @@ public class UsuarioMapper {
                 usuario.getId(),
                 usuario.getNombre(),
                 usuario.getUser(),
+                usuario.getTipo_documento(),
+                usuario.getDocumento(),
                 usuario.getCorreo(),
                 usuario.getRol(),
                 usuario.getReferencia()

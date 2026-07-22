@@ -40,6 +40,12 @@ public class UsuarioService {
         return usuarioMapper.toResponse(usuario);
     }
 
+    public UsuarioResponse consultarPorDocumento (Long documento) {
+        Usuario usuario = usuarioRepository.findByDocumento(documento)
+                .orElseThrow(() -> new UsuarioNotFoundException(documento));
+        return usuarioMapper.toResponse(usuario);
+    }
+
     public UsuarioResponse consultarUsuarioPorCorreo(String correo) {
         Usuario usuario = usuarioRepository.findByCorreo(correo)
                 .orElseThrow(() -> new UsuarioNotFoundException(correo));

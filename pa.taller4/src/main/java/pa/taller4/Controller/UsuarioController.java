@@ -44,6 +44,12 @@ public class UsuarioController {
         return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
 
+    @GetMapping("/documento/{documento}")
+    public ResponseEntity<UsuarioResponse> consultarPorDocumento(@PathVariable Long documento) {
+        UsuarioResponse usuario = usuarioService.consultarPorDocumento(documento);
+        return new ResponseEntity<>(usuario, HttpStatus.OK);
+    }
+
     @PutMapping("/actualizar/{id}")
     public ResponseEntity<UsuarioResponse> actualizar(@PathVariable Long id, @RequestBody Usuario usuario) {
         UsuarioResponse usuarioActualizado = usuarioService.actualizarUsuario(id, usuario);

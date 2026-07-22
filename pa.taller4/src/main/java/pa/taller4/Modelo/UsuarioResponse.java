@@ -19,6 +19,8 @@ public class UsuarioResponse {
     private Long id;
     private String nombre;
     private String user;
+    private String tipo_documento;
+    private Long documento;
     private String correo;
     private String rol;
     private String referencia;

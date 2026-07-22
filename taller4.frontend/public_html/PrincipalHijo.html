@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Organizador De Labores</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/Style.css">
+    </head>
+    <body>
+        <header>
+            <nav class="barrasuperior" id="principal">
+                <div class="logo">
+                    <img src="img/logo.png" alt="Logo de Organizador de Labores" class="logo-img">
+                </div>
+                
+                <div class="menu-items">
+                    <button class="menu-btn" id="Consultar">Consultar Actividades</button>
+                    <button class="menu-btn" id="añadir">Añadir Actividad</button>
+                    <button class="menu-btn" id="ajustes">Ajustes</button>
+                    
+                </div>
+                
+                <div class="botones">
+                    <img src="img/perfil.png" alt="Perfil" class="perfil-img">  
+                    <h2 class="perfil"></h2>
+                </div>
+            </nav>
+        </header>
+
+        <div class="contenido">
+
+            <div class="info-calendario">
+                <h2>Recuerda que las tareas 
+                    no son una obligación pesada, sino la oportunidad 
+                    de demostrar cuánto nos importamos y cómo podemos cuidarnos mutuamente. 
+                    ¡Sigamos trabajando juntos para lograr un gran ambiente en nuestro hogar!</h2>
+            </div>
+
+            <div class="calendario-contenedor">
+                <div class="calendario-header">
+                    <button id="mes-anterior" class="btn-nav">&lt;</button>
+                    <h2 id="mes-anio-titulo">Mayo 2026</h2>
+                    <button id="mes-siguiente" class="btn-nav">&gt;</button>
+                </div>
+
+                <div class="dias-semana">
+                    <div>Dom</div><div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div>
+                </div>
+
+                <div id="dias-calendario" class="dias-grid">
+                </div>
+            </div>
+
+            <div class="info-calendario">
+                <h2>Seleccione la actividad para desglosar la información</h2>
+                <h2>Para añadir una nueva actividad, haga clic en el botón "Añadir Actividad"</h2>
+                <h2>Para marcar como realizada una actividad, haga clic en ella</h2>
+            </div>
+            
+        </div>
+
+        <footer><br>
+            <p>© 2026 Programacion avanzada. Universidad Distrital Francisco José de Caldas.</p>
+        </footer>
+        <script src="Scripts/Principal.js"></script>
+    </body>
+</html>
